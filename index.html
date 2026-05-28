@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lem Play | Nancy</title>
-<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Choose Lem, or Lem Play to pair with the Nancy Play app. Add NancyPlay+: 3-day free trial, then US$99/yr.">
+<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Choose Lem, or Lem Play to pair with the Nancy Play app. Add Play+: 3-day free trial, then US$99/yr.">
 <link rel="icon" href="https://hellonancy.com/cdn/shop/files/favicon.png?width=96" type="image/png">
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 <link rel="preconnect" href="https://hellonancy.com">
@@ -95,7 +95,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
 .bundle.has-badges{margin-top:14px}
 .lem25{font-size:12.5px;color:var(--muted);margin:14px 2px 0;line-height:1.5}
 
-/* ---------- NancyPlay+ add-on ---------- */
+/* ---------- Play+ add-on ---------- */
 .addon{display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-top:24px;background:var(--card);cursor:pointer;transition:.15s}
 .addon.hidden{display:none}
 .addon.checked{border-color:var(--pink);background:var(--pink-tint)}
@@ -222,12 +222,12 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
 
       <p class="lem25">2-pack price reflects 25% off applied automatically with code LEM25 at checkout.</p>
 
-      <!-- NancyPlay+ add-on (only for Lem Play) -->
+      <!-- Play+ add-on (only for Lem Play) -->
       <label class="addon hidden" id="addonPlay">
         <input type="checkbox" id="playCheck">
         <div class="addon-row">
           <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <span class="addon-label">Add NancyPlay+ <span class="terms">(3 days <b>free trial</b>, then US$99/yr)</span></span>
+          <span class="addon-label">Add Play+ <span class="terms">(3 days <b>free trial</b>, then US$99/yr)</span></span>
           <span class="info" aria-hidden="true">i</span>
         </div>
         <ul class="addon-features">
@@ -253,7 +253,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
 </div>
 
 <footer class="footer">
-  Lem™, Lem Play™ and NancyPlay+ are products of Nancy. Only available here — beware of counterfeit sellers.<br>
+  Lem™, Lem Play™ and Play+ are products of Nancy. Only available here — beware of counterfeit sellers.<br>
   © Nancy. All rights reserved.
 </footer>
 
@@ -321,7 +321,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
     els.priceWas.textContent = '$' + b.was.toFixed(2);
     els.priceBadge.textContent = pct(b.was,b.now) + '% OFF';
 
-    // NancyPlay+ only for Lem Play
+    // Play+ only for Lem Play
     els.addon.classList.toggle('hidden', !isPlay);
     if(!isPlay){ els.playCheck.checked=false; }
     els.addon.classList.toggle('checked', isPlay && els.playCheck.checked);
@@ -329,7 +329,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
     // CTA
     els.buyBtn.textContent = 'Add to Cart — ' + money(b.now);
     els.buyNote.textContent = (isPlay && els.playCheck.checked)
-      ? 'Includes a 3-day NancyPlay+ trial, then US$99/yr · Cancel anytime'
+      ? 'Includes a 3-day Play+ trial, then US$99/yr · Cancel anytime'
       : 'One-time purchase · 30-day money-back guarantee';
   }
 
@@ -344,7 +344,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
     var params = [];
     if(product==='play') params.push('version=lem-play');
     if(bundle==='2') params.push('pack=2');
-    if(product==='play' && els.playCheck.checked) params.push('nancyplus=trial');
+    if(product==='play' && els.playCheck.checked) params.push('play-plus=trial');
     if(params.length) url += '?' + params.join('&');
     window.location.href = url;
   });
