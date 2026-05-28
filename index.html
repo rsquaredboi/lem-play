@@ -4,12 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lem Play | Nancy</title>
-<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Pick your bundle and add Nancy Play: 3-day free trial, then US$99/yr.">
+<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Choose Lem, or Lem Play to pair with the Nancy Play app. Add NancyPlay+: 3-day free trial, then US$99/yr.">
 <link rel="icon" href="https://hellonancy.com/cdn/shop/files/favicon.png?width=96" type="image/png">
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 <link rel="preconnect" href="https://hellonancy.com">
 <style>
-/* ---------- Brand fonts ---------- */
 @font-face{font-family:'ESRebond';src:url('https://cdn.shopify.com/s/files/1/0726/3764/5121/files/ESRebondGrotesque-Regular.woff') format('woff');font-weight:400;font-display:swap}
 @font-face{font-family:'ESRebond';src:url('https://cdn.shopify.com/s/files/1/0726/3764/5121/files/ESRebondGrotesque-Semibold.woff') format('woff');font-weight:600;font-display:swap}
 @font-face{font-family:'ESRebond';src:url('https://cdn.shopify.com/s/files/1/0726/3764/5121/files/ESRebondGrotesque-Bold.woff') format('woff');font-weight:700;font-display:swap}
@@ -48,8 +47,8 @@ img{max-width:100%;display:block}
 .rating{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .stars{color:var(--gold);font-size:18px;letter-spacing:2px;line-height:1}
 .rating span{font-weight:600;font-size:14px}
-h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,9vw,76px);line-height:.95;letter-spacing:-.02em;margin:.1em 0 .25em}
-.subtitle{font-size:17px;color:var(--muted);margin:0 0 22px;max-width:46ch}
+h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,8.5vw,72px);line-height:.95;letter-spacing:-.02em;margin:.1em 0 .25em}
+.subtitle{font-size:17px;color:var(--muted);margin:0 0 22px;max-width:46ch;min-height:2.6em}
 
 .price-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
 .price-now{font-weight:700;font-size:34px;letter-spacing:-.01em}
@@ -59,11 +58,25 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 .ship{display:flex;align-items:center;gap:12px;background:var(--pink-tint);border:1px solid var(--pink-tint-2);border-radius:var(--radius);padding:16px 18px;margin-bottom:24px;font-weight:700}
 .ship .dot{width:14px;height:14px;border-radius:50%;background:var(--pink);flex:none;box-shadow:0 0 0 4px rgba(255,48,204,.18)}
 
-.eyebrow{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);margin:0 0 16px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);margin:0 0 14px}
 .eyebrow::before{content:"";width:26px;height:1px;background:var(--maroon)}
+.eyebrow.mt{margin-top:26px}
 
-/* ---------- Bundle cards (Nancy PDP style, serif) ---------- */
-.bundle{position:relative;display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 20px 56px;background:var(--card);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+/* ---------- Version selector (Lem / Lem Play) ---------- */
+.versions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ver{position:relative;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 16px 16px 16px;background:var(--card);cursor:pointer;transition:.15s}
+.ver input{position:absolute;opacity:0;pointer-events:none}
+.ver.selected{border-color:var(--maroon);border-width:2px;background:var(--pink-tint);box-shadow:var(--shadow)}
+.ver .tick{position:absolute;top:14px;right:14px;width:20px;height:20px;border-radius:50%;border:2px solid #c9bdbe;background:#fff;display:flex;align-items:center;justify-content:center;transition:.15s}
+.ver.selected .tick{background:var(--maroon);border-color:var(--maroon)}
+.ver .tick svg{width:11px;height:11px;color:#fff;opacity:0}
+.ver.selected .tick svg{opacity:1}
+.ver-name{font-weight:700;font-size:18px;padding-right:24px}
+.ver-price{font-weight:700;font-size:14px;color:var(--pink-ink);margin-top:3px}
+.ver-desc{font-size:13px;color:var(--muted);margin-top:7px;line-height:1.4}
+
+/* ---------- Bundle cards ---------- */
+.bundle{position:relative;display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 20px 56px;background:var(--card);cursor:pointer;transition:.15s}
 .bundle + .bundle{margin-top:18px}
 .bundle input{position:absolute;opacity:0;pointer-events:none}
 .bundle .radio{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:2px solid #c9bdbe;background:#fff;transition:.15s}
@@ -82,8 +95,9 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 .bundle.has-badges{margin-top:14px}
 .lem25{font-size:12.5px;color:var(--muted);margin:14px 2px 0;line-height:1.5}
 
-/* ---------- Nancy Play add-on (checkbox) ---------- */
+/* ---------- NancyPlay+ add-on ---------- */
 .addon{display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-top:24px;background:var(--card);cursor:pointer;transition:.15s}
+.addon.hidden{display:none}
 .addon.checked{border-color:var(--pink);background:var(--pink-tint)}
 .addon input{position:absolute;opacity:0;pointer-events:none}
 .addon-row{display:flex;align-items:center;gap:13px}
@@ -115,7 +129,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 <body>
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
 
-<div class="announce">✨ Limited time — save 44% on Lem &nbsp;·&nbsp; Free discreet shipping</div>
+<div class="announce">✨ Limited time — save 44% &nbsp;·&nbsp; Free discreet shipping</div>
 <header class="header">
   <img src="https://hellonancy.com/cdn/shop/files/Nancy_Logo_Pink.png?width=439" alt="Nancy" width="120" height="30">
 </header>
@@ -140,8 +154,8 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
         <span>4.8 · 14,538 reviews</span>
       </div>
 
-      <h1 class="title">Lem</h1>
-      <p class="subtitle">The lemon-shaped clitoral massager. 12 air-pulse patterns, whisper-quiet, and waterproof.</p>
+      <h1 class="title" id="title">Lem</h1>
+      <p class="subtitle" id="subtitle">The lemon-shaped clitoral massager. 12 air-pulse patterns, whisper-quiet, and waterproof.</p>
 
       <div class="price-row">
         <span class="price-now" id="priceNow">$89.00</span>
@@ -151,58 +165,76 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 
       <div class="ship"><span class="dot"></span> Free discreet shipping</div>
 
-      <p class="eyebrow">Choose your bundle</p>
+      <!-- Version selector -->
+      <p class="eyebrow">Choose your version</p>
+      <div class="versions">
+        <label class="ver selected" id="verLem">
+          <input type="radio" name="product" value="lem" checked>
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div class="ver-name">Lem</div>
+          <div class="ver-price">from $89</div>
+          <div class="ver-desc">The classic lemon massager.</div>
+        </label>
+        <label class="ver" id="verPlay">
+          <input type="radio" name="product" value="play">
+          <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <div class="ver-name">Lem Play</div>
+          <div class="ver-price">from $99</div>
+          <div class="ver-desc">App-connected — pairs with the Nancy Play app.</div>
+        </label>
+      </div>
 
-      <!-- Bundle: 1 Lem -->
+      <!-- Bundle selector -->
+      <p class="eyebrow mt">Choose your bundle</p>
+
       <label class="bundle selected" id="bundle1">
         <input type="radio" name="bundle" value="1" checked>
         <span class="radio" aria-hidden="true"></span>
         <div class="bundle-top">
           <div>
-            <div class="bundle-name">Just for me · 1 Lem</div>
+            <div class="bundle-name" id="b1name">Just for me · 1 Lem</div>
             <div class="bundle-desc">Treat yourself.</div>
           </div>
           <div class="bundle-price">
-            <span class="now">$89</span>
-            <span class="was">$159</span>
+            <span class="now" id="b1now">$89</span>
+            <span class="was" id="b1was">$159</span>
           </div>
         </div>
       </label>
 
-      <!-- Bundle: 2 Lems -->
       <label class="bundle has-badges" id="bundle2">
         <input type="radio" name="bundle" value="2">
         <span class="radio" aria-hidden="true"></span>
-        <span class="badge-loved">Most loved · Save $44</span>
+        <span class="badge-loved" id="b2loved">Most loved · Save $44</span>
         <span class="badge-sale"><span class="dot"></span>Limited sale</span>
         <div class="bundle-top">
           <div>
-            <div class="bundle-name">One for me, one for my bestie · 2 Lems</div>
+            <div class="bundle-name" id="b2name">One for me, one for my bestie · 2 Lems</div>
             <div class="bundle-desc">Or one for home, one for travel — never be without.</div>
           </div>
           <div class="bundle-price">
-            <span class="now">$133.50</span>
-            <span class="was">$318</span>
-            <span class="each">$66.75 each</span>
+            <span class="now" id="b2now">$133.50</span>
+            <span class="was" id="b2was">$318</span>
+            <span class="each" id="b2each">$66.75 each</span>
           </div>
         </div>
       </label>
 
       <p class="lem25">2-pack price reflects 25% off applied automatically with code LEM25 at checkout.</p>
 
-      <!-- Add-on: Nancy Play -->
-      <label class="addon" id="addonPlay">
+      <!-- NancyPlay+ add-on (only for Lem Play) -->
+      <label class="addon hidden" id="addonPlay">
         <input type="checkbox" id="playCheck">
         <div class="addon-row">
           <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
-          <span class="addon-label">Add Nancy&nbsp;Play <span class="terms">(3 days <b>free trial</b>, then US$99/yr)</span></span>
+          <span class="addon-label">Add NancyPlay+ <span class="terms">(3 days <b>free trial</b>, then US$99/yr)</span></span>
           <span class="info" aria-hidden="true">i</span>
         </div>
         <ul class="addon-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Full access to the Nancy Play app</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Guided pleasure audio &amp; technique sessions</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Fresh content dropped every week</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Couples &amp; solo modes synced to your Lem</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Personalized recommendations as you go</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Couples &amp; solo modes synced to your Lem Play</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Cancel anytime — no questions asked</li>
         </ul>
       </label>
@@ -221,46 +253,100 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 </div>
 
 <footer class="footer">
-  Lem™ and Nancy Play are products of Nancy. Only available here — beware of counterfeit sellers.<br>
+  Lem™, Lem Play™ and NancyPlay+ are products of Nancy. Only available here — beware of counterfeit sellers.<br>
   © Nancy. All rights reserved.
 </footer>
 
 <script>
 (function(){
-  var BUNDLES = {
-    '1': {now:'$89.00', was:'$159.00', badge:'44% OFF', btn:'$89'},
-    '2': {now:'$133.50', was:'$318.00', badge:'58% OFF', btn:'$133.50'}
+  // product -> bundle pricing & copy
+  var PRODUCTS = {
+    lem: {
+      label:'Lem', plural:'Lems',
+      subtitle:'The lemon-shaped clitoral massager. 12 air-pulse patterns, whisper-quiet, and waterproof.',
+      bundles:{ '1':{now:89,was:159}, '2':{now:133.50,was:318,each:66.75,save:44} }
+    },
+    play: {
+      label:'Lem Play', plural:'Lem Plays',
+      subtitle:'The app-connected lemon massager. Pairs with the Nancy Play app for guided modes — plus everything Lem does.',
+      bundles:{ '1':{now:99,was:179}, '2':{now:148.50,was:358,each:74.25,save:50} }
+    }
   };
-  var b1=document.getElementById('bundle1'), b2=document.getElementById('bundle2');
-  var addon=document.getElementById('addonPlay'), playCheck=document.getElementById('playCheck');
-  var buyBtn=document.getElementById('buyBtn'), buyNote=document.getElementById('buyNote');
-  var priceNow=document.getElementById('priceNow'), priceWas=document.getElementById('priceWas'), priceBadge=document.getElementById('priceBadge');
-  var current='1';
+
+  var els = {
+    verLem:document.getElementById('verLem'), verPlay:document.getElementById('verPlay'),
+    bundle1:document.getElementById('bundle1'), bundle2:document.getElementById('bundle2'),
+    addon:document.getElementById('addonPlay'), playCheck:document.getElementById('playCheck'),
+    buyBtn:document.getElementById('buyBtn'), buyNote:document.getElementById('buyNote'),
+    title:document.getElementById('title'), subtitle:document.getElementById('subtitle'),
+    priceNow:document.getElementById('priceNow'), priceWas:document.getElementById('priceWas'), priceBadge:document.getElementById('priceBadge'),
+    b1name:document.getElementById('b1name'), b1now:document.getElementById('b1now'), b1was:document.getElementById('b1was'),
+    b2name:document.getElementById('b2name'), b2now:document.getElementById('b2now'), b2was:document.getElementById('b2was'), b2each:document.getElementById('b2each'), b2loved:document.getElementById('b2loved')
+  };
+
+  var product='lem', bundle='1';
+  var money = function(n){ return '$' + (n % 1 === 0 ? n : n.toFixed(2)); };
+  var pct = function(was,now){ return Math.round((was-now)/was*100); };
 
   function render(){
-    var d=BUNDLES[current];
-    b1.classList.toggle('selected', current==='1');
-    b2.classList.toggle('selected', current==='2');
-    b1.querySelector('input').checked = current==='1';
-    b2.querySelector('input').checked = current==='2';
-    priceNow.textContent=d.now; priceWas.textContent=d.was; priceBadge.textContent=d.badge;
-    buyBtn.textContent='Add to Cart — '+d.btn;
-    var play=playCheck.checked;
-    addon.classList.toggle('checked', play);
-    buyNote.textContent = play
-      ? 'Includes a 3-day Nancy Play trial, then US$99/yr · Cancel anytime'
+    var P = PRODUCTS[product];
+    var isPlay = product==='play';
+
+    // version cards
+    els.verLem.classList.toggle('selected', !isPlay);
+    els.verPlay.classList.toggle('selected', isPlay);
+    els.verLem.querySelector('input').checked = !isPlay;
+    els.verPlay.querySelector('input').checked = isPlay;
+    els.subtitle.textContent = P.subtitle;
+
+    // bundle copy + prices for this product
+    els.b1name.textContent = 'Just for me · 1 ' + P.label;
+    els.b1now.textContent = money(P.bundles['1'].now);
+    els.b1was.textContent = money(P.bundles['1'].was);
+    els.b2name.textContent = 'One for me, one for my bestie · 2 ' + P.plural;
+    els.b2now.textContent = money(P.bundles['2'].now);
+    els.b2was.textContent = money(P.bundles['2'].was);
+    els.b2each.textContent = money(P.bundles['2'].each) + ' each';
+    els.b2loved.textContent = 'Most loved · Save $' + P.bundles['2'].save;
+
+    // bundle selection
+    els.bundle1.classList.toggle('selected', bundle==='1');
+    els.bundle2.classList.toggle('selected', bundle==='2');
+    els.bundle1.querySelector('input').checked = bundle==='1';
+    els.bundle2.querySelector('input').checked = bundle==='2';
+
+    // headline price = selected product + bundle
+    var b = P.bundles[bundle];
+    els.priceNow.textContent = '$' + b.now.toFixed(2);
+    els.priceWas.textContent = '$' + b.was.toFixed(2);
+    els.priceBadge.textContent = pct(b.was,b.now) + '% OFF';
+
+    // NancyPlay+ only for Lem Play
+    els.addon.classList.toggle('hidden', !isPlay);
+    if(!isPlay){ els.playCheck.checked=false; }
+    els.addon.classList.toggle('checked', isPlay && els.playCheck.checked);
+
+    // CTA
+    els.buyBtn.textContent = 'Add to Cart — ' + money(b.now);
+    els.buyNote.textContent = (isPlay && els.playCheck.checked)
+      ? 'Includes a 3-day NancyPlay+ trial, then US$99/yr · Cancel anytime'
       : 'One-time purchase · 30-day money-back guarantee';
   }
 
-  b1.addEventListener('click', function(){ current='1'; render(); });
-  b2.addEventListener('click', function(){ current='2'; render(); });
-  // label natively toggles the checkbox; just re-render on change
-  playCheck.addEventListener('change', render);
+  els.verLem.addEventListener('click', function(){ product='lem'; render(); });
+  els.verPlay.addEventListener('click', function(){ product='play'; render(); });
+  els.bundle1.addEventListener('click', function(){ bundle='1'; render(); });
+  els.bundle2.addEventListener('click', function(){ bundle='2'; render(); });
+  els.playCheck.addEventListener('change', render);
 
-  buyBtn.addEventListener('click', function(){
-    var url = current==='2' ? 'https://hellonancy.com/products/lem?variant=2pack' : 'https://hellonancy.com/products/lem';
-    if(playCheck.checked) url += (url.indexOf('?')>-1?'&':'?') + 'nancy-play=trial';
-    window.location.href=url;
+  els.buyBtn.addEventListener('click', function(){
+    var url = 'https://hellonancy.com/products/lem';
+    var params = [];
+    if(product==='play') params.push('version=lem-play');
+    if(bundle==='2') params.push('pack=2');
+    if(product==='play' && els.playCheck.checked) params.push('nancyplus=trial');
+    if(params.length) url += '?' + params.join('&');
+    window.location.href = url;
   });
 
   var hero=document.getElementById('heroImg');
