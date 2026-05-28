@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lem Play | Nancy</title>
-<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Choose Lem on its own, or Lem Play with a Nancy Play subscription: 3-day free trial, then US$99/yr.">
+<meta name="description" content="Meet Lem — the lemon-shaped clitoral massager. Pick your bundle and add Nancy Play: 3-day free trial, then US$99/yr.">
 <link rel="icon" href="https://hellonancy.com/cdn/shop/files/favicon.png?width=96" type="image/png">
 <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 <link rel="preconnect" href="https://hellonancy.com">
@@ -16,37 +16,26 @@
 @font-face{font-family:'Fraunces';src:url('https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Fraunces-Regular.woff') format('woff');font-weight:400;font-display:swap}
 @font-face{font-family:'Fraunces';src:url('https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Fraunces-Bold.woff') format('woff');font-weight:700;font-display:swap}
 
-/* ---------- Tokens ---------- */
 :root{
   --cream:#fcf7ed; --card:#ffffff; --ink:#1a1a1a; --muted:#6b6660;
-  --pink:#ff30cc; --pink-ink:#d3009f; --pink-tint:#fde7f6; --pink-tint-2:#fbd9ef;
-  --green-tint:#e9f7ee; --green:#1f9d57;
-  --line:rgba(26,26,26,.12); --line-strong:rgba(26,26,26,.85);
-  --gold:#f5a623;
-  --radius:16px; --radius-lg:28px;
-  --shadow:0 8px 30px -12px rgba(80,20,60,.18);
+  --pink:#ff30cc; --pink-ink:#c4119b; --pink-tint:#fce8f4; --pink-tint-2:#f8d4ec;
+  --maroon:#45191d; --maroon-muted:#9a7d80;
+  --line:rgba(26,26,26,.14); --gold:#f5a623;
+  --radius:14px; --radius-lg:28px; --shadow:0 8px 30px -12px rgba(80,20,60,.18);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{
-  background:var(--cream); color:var(--ink);
-  font-family:'ESRebond',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
-  -webkit-font-smoothing:antialiased; line-height:1.45;
-}
+body{background:var(--cream);color:var(--ink);font-family:'ESRebond',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45}
 img{max-width:100%;display:block}
-a{color:inherit}
 
-/* ---------- Top bar / header ---------- */
-.announce{background:var(--pink);color:#fff;text-align:center;font-size:13px;font-weight:600;letter-spacing:.01em;padding:9px 14px}
+.announce{background:var(--pink);color:#fff;text-align:center;font-size:13px;font-weight:600;padding:9px 14px}
 .header{padding:18px 16px;display:flex;justify-content:center;align-items:center;border-bottom:1px solid var(--line)}
 .header img{height:30px;width:auto}
 
-/* ---------- Layout ---------- */
 .wrap{max-width:1120px;margin:0 auto;padding:28px 16px 64px}
 .pdp{display:grid;grid-template-columns:1fr;gap:28px}
 @media(min-width:900px){.pdp{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
 
-/* ---------- Gallery ---------- */
 .gallery{position:sticky;top:20px}
 .gallery .hero{border-radius:var(--radius-lg);overflow:hidden;background:#f3ead9;aspect-ratio:1/1}
 .gallery .hero img{width:100%;height:100%;object-fit:cover}
@@ -54,9 +43,8 @@ a{color:inherit}
 .thumbs button{flex:1;border:2px solid transparent;border-radius:14px;overflow:hidden;padding:0;background:#f3ead9;cursor:pointer;aspect-ratio:1/1}
 .thumbs button.active{border-color:var(--pink)}
 .thumbs img{width:100%;height:100%;object-fit:cover}
-@media(min-width:900px){.gallery{order:1}}
+@media(min-width:900px){.gallery{order:1}.buybox{order:2}}
 
-/* ---------- Buy box ---------- */
 .rating{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .stars{color:var(--gold);font-size:18px;letter-spacing:2px;line-height:1}
 .rating span{font-weight:600;font-size:14px}
@@ -66,58 +54,62 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 .price-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
 .price-now{font-weight:700;font-size:34px;letter-spacing:-.01em}
 .price-was{color:#9a948c;text-decoration:line-through;font-size:24px;font-weight:600}
-.badge{background:var(--pink);color:#fff;font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px;letter-spacing:.02em}
-.price-sub{font-size:14px;color:var(--muted);font-weight:600}
+.badge{background:var(--pink);color:#fff;font-weight:700;font-size:13px;padding:7px 14px;border-radius:999px}
 
-.ship{display:flex;align-items:center;gap:12px;background:var(--pink-tint);border:1px solid var(--pink-tint-2);border-radius:var(--radius);padding:16px 18px;margin-bottom:22px;font-weight:700}
+.ship{display:flex;align-items:center;gap:12px;background:var(--pink-tint);border:1px solid var(--pink-tint-2);border-radius:var(--radius);padding:16px 18px;margin-bottom:24px;font-weight:700}
 .ship .dot{width:14px;height:14px;border-radius:50%;background:var(--pink);flex:none;box-shadow:0 0 0 4px rgba(255,48,204,.18)}
 
-.choose{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);margin:0 0 16px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--maroon)}
 
-/* option cards */
-.opt{display:block;position:relative;border:1.5px solid var(--line);border-radius:var(--radius);padding:18px 18px 18px 56px;margin-bottom:14px;cursor:pointer;transition:border-color .15s, box-shadow .15s, background .15s;background:var(--card)}
-.opt:hover{border-color:rgba(255,48,204,.5)}
-.opt .radio{position:absolute;left:18px;top:20px;width:22px;height:22px;border-radius:50%;border:2px solid #cfc9c0;background:#fff;transition:.15s}
-.opt input{position:absolute;opacity:0;pointer-events:none}
-.opt.selected{border-color:var(--line-strong);box-shadow:var(--shadow)}
-.opt.selected .radio{border-color:var(--pink);background:radial-gradient(circle at center,var(--pink) 0 42%,#fff 46%)}
-.opt-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.opt-name{font-weight:700;font-size:20px}
-.opt-eyebrow{color:var(--pink-ink);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
-.opt-desc{color:var(--muted);font-size:15px;margin-top:2px}
-.opt-price{text-align:right;white-space:nowrap}
-.opt-price .now{font-weight:700;font-size:20px}
-.opt-price .was{display:block;color:#9a948c;text-decoration:line-through;font-size:14px;font-weight:600}
-.opt-price .small{font-size:13px;color:var(--muted);font-weight:600}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.tag{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;background:#fff}
-.tag svg{width:15px;height:15px}
+/* ---------- Bundle cards (Nancy PDP style, serif) ---------- */
+.bundle{position:relative;display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:20px 20px 20px 56px;background:var(--card);cursor:pointer;transition:border-color .15s,background .15s,box-shadow .15s}
+.bundle + .bundle{margin-top:18px}
+.bundle input{position:absolute;opacity:0;pointer-events:none}
+.bundle .radio{position:absolute;left:20px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:2px solid #c9bdbe;background:#fff;transition:.15s}
+.bundle.selected{border-color:var(--maroon);border-width:2px;background:var(--pink-tint);box-shadow:var(--shadow)}
+.bundle.selected .radio{border-color:var(--maroon);background:radial-gradient(circle at center,var(--maroon) 0 42%,#fff 46%)}
+.bundle-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.bundle-name{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;color:var(--maroon);line-height:1.2}
+.bundle-desc{font-family:'Fraunces',Georgia,serif;font-size:15px;color:var(--maroon-muted);margin-top:4px}
+.bundle-price{text-align:right;white-space:nowrap;font-family:'Fraunces',Georgia,serif}
+.bundle-price .now{font-weight:600;font-size:22px;color:var(--maroon)}
+.bundle-price .was{display:block;color:#a99fa0;text-decoration:line-through;font-size:15px;margin-top:2px}
+.bundle-price .each{display:block;color:var(--maroon-muted);font-size:13px;margin-top:4px}
+.badge-loved{position:absolute;top:-12px;left:18px;background:var(--maroon);color:#fff;font-weight:700;font-size:11px;letter-spacing:.07em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+.badge-sale{position:absolute;top:-11px;right:18px;display:flex;align-items:center;gap:7px;background:var(--pink-tint);color:var(--pink-ink);font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1px solid var(--pink-tint-2)}
+.badge-sale .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
+.bundle.has-badges{margin-top:14px}
+.lem25{font-size:12.5px;color:var(--muted);margin:14px 2px 0;line-height:1.5}
 
-/* subscription detail panel */
-.subpanel{border:1.5px solid var(--pink-tint-2);background:linear-gradient(180deg,#fff,var(--pink-tint));border-radius:var(--radius);padding:18px 20px;margin:-2px 0 16px;display:none}
-.subpanel.show{display:block;animation:fade .25s ease}
-@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
-.subpanel h3{margin:0 0 4px;font-size:16px;font-weight:700}
-.subpanel .terms{font-size:14px;color:var(--muted);margin:0 0 12px}
-.subpanel .terms b{color:var(--ink)}
-.subpanel ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.subpanel li{display:flex;gap:9px;align-items:flex-start;font-size:14.5px;font-weight:500}
-.subpanel li svg{width:18px;height:18px;flex:none;color:var(--pink);margin-top:1px}
+/* ---------- Nancy Play add-on (checkbox) ---------- */
+.addon{display:block;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin-top:24px;background:var(--card);cursor:pointer;transition:.15s}
+.addon.checked{border-color:var(--pink);background:var(--pink-tint)}
+.addon input{position:absolute;opacity:0;pointer-events:none}
+.addon-row{display:flex;align-items:center;gap:13px}
+.addon .box{width:23px;height:23px;border-radius:7px;border:2px solid #c9bdbe;background:#fff;flex:none;display:flex;align-items:center;justify-content:center;transition:.15s}
+.addon.checked .box{background:var(--pink);border-color:var(--pink)}
+.addon .box svg{width:14px;height:14px;color:#fff;opacity:0;transition:.15s}
+.addon.checked .box svg{opacity:1}
+.addon-label{font-size:16px;font-weight:700;line-height:1.35}
+.addon-label .terms{font-weight:500;color:var(--muted)}
+.addon-label .terms b{color:var(--pink-ink);font-weight:700}
+.addon .info{margin-left:auto;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-style:italic;font-family:Georgia,serif;font-size:14px;font-weight:700;flex:none}
+.addon-features{list-style:none;margin:15px 0 2px;padding-top:15px;border-top:1px solid var(--line);display:grid;gap:10px}
+.addon.checked .addon-features{border-top-color:var(--pink-tint-2)}
+.addon-features li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;font-weight:500}
+.addon-features svg{width:18px;height:18px;color:var(--pink);flex:none;margin-top:1px}
 
-/* buy button */
-.buy{width:100%;border:none;background:var(--pink);color:#fff;font-family:inherit;font-weight:700;font-size:19px;padding:20px;border-radius:999px;cursor:pointer;letter-spacing:.01em;transition:transform .08s ease,filter .15s;box-shadow:0 10px 24px -10px rgba(255,48,204,.6)}
+.buy{width:100%;border:none;background:var(--pink);color:#fff;font-family:inherit;font-weight:700;font-size:19px;padding:20px;border-radius:999px;cursor:pointer;margin-top:24px;transition:transform .08s,filter .15s;box-shadow:0 10px 24px -10px rgba(255,48,204,.6)}
 .buy:hover{filter:brightness(1.04)}
 .buy:active{transform:translateY(1px)}
 .buy-note{text-align:center;font-size:13px;color:var(--muted);margin:12px 0 0}
 
-/* trust row */
 .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:26px;border-top:1px solid var(--line);padding-top:22px}
 .trust .item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
 .trust svg{width:26px;height:26px;color:var(--ink)}
 .trust span{font-size:13px;font-weight:600;line-height:1.3}
-
 .footer{max-width:1120px;margin:0 auto;padding:24px 16px 60px;color:var(--muted);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
-@media(min-width:900px){.buybox{order:2}}
 </style>
 </head>
 <body>
@@ -131,7 +123,6 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 <div class="wrap">
   <div class="pdp">
 
-    <!-- Gallery -->
     <div class="gallery">
       <div class="hero">
         <img id="heroImg" src="https://hellonancy.com/cdn/shop/files/WhatsAppImage2023-11-18at14.19.19_2acc31e8.webp?width=1100" alt="Lem clitoral massager">
@@ -143,7 +134,6 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
       </div>
     </div>
 
-    <!-- Buy box -->
     <div class="buybox">
       <div class="rating">
         <span class="stars" aria-hidden="true">★★★★★</span>
@@ -151,68 +141,71 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
       </div>
 
       <h1 class="title">Lem</h1>
-      <p class="subtitle">The lemon-shaped clitoral massager. 12 air-pulse patterns, whisper-quiet, and waterproof — now with the option to add <b>Nancy&nbsp;Play</b>.</p>
+      <p class="subtitle">The lemon-shaped clitoral massager. 12 air-pulse patterns, whisper-quiet, and waterproof.</p>
 
       <div class="price-row">
         <span class="price-now" id="priceNow">$89.00</span>
         <span class="price-was" id="priceWas">$159.00</span>
         <span class="badge" id="priceBadge">44% OFF</span>
-        <span class="price-sub" id="priceSub" hidden></span>
       </div>
 
       <div class="ship"><span class="dot"></span> Free discreet shipping</div>
 
-      <p class="choose">Choose your option</p>
+      <p class="eyebrow">Choose your bundle</p>
 
-      <!-- Option: Lem -->
-      <label class="opt selected" id="optLem">
-        <input type="radio" name="plan" value="lem" checked>
+      <!-- Bundle: 1 Lem -->
+      <label class="bundle selected" id="bundle1">
+        <input type="radio" name="bundle" value="1" checked>
         <span class="radio" aria-hidden="true"></span>
-        <div class="opt-top">
+        <div class="bundle-top">
           <div>
-            <div class="opt-name">Lem</div>
-            <div class="opt-desc">Just the device — yours to keep</div>
+            <div class="bundle-name">Just for me · 1 Lem</div>
+            <div class="bundle-desc">Treat yourself.</div>
           </div>
-          <div class="opt-price">
+          <div class="bundle-price">
             <span class="now">$89</span>
             <span class="was">$159</span>
           </div>
         </div>
       </label>
 
-      <!-- Option: Lem Play -->
-      <label class="opt" id="optPlay">
-        <input type="radio" name="plan" value="play">
+      <!-- Bundle: 2 Lems -->
+      <label class="bundle has-badges" id="bundle2">
+        <input type="radio" name="bundle" value="2">
         <span class="radio" aria-hidden="true"></span>
-        <div class="opt-top">
+        <span class="badge-loved">Most loved · Save $44</span>
+        <span class="badge-sale"><span class="dot"></span>Limited sale</span>
+        <div class="bundle-top">
           <div>
-            <div class="opt-eyebrow">Best value</div>
-            <div class="opt-name">Lem&nbsp;Play</div>
-            <div class="opt-desc">Lem + a Nancy&nbsp;Play subscription</div>
+            <div class="bundle-name">One for me, one for my bestie · 2 Lems</div>
+            <div class="bundle-desc">Or one for home, one for travel — never be without.</div>
           </div>
-          <div class="opt-price">
-            <span class="now">Free</span>
-            <span class="small">3-day trial</span>
+          <div class="bundle-price">
+            <span class="now">$133.50</span>
+            <span class="was">$318</span>
+            <span class="each">$66.75 each</span>
           </div>
-        </div>
-        <div class="tags">
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5.5 4 3.5 7.5C19 16.65 12 21 12 21z"/></svg>Couples &amp; solo</span>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Guided audio</span>
-          <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>New weekly</span>
         </div>
       </label>
 
-      <!-- Subscription detail -->
-      <div class="subpanel" id="subPanel">
-        <h3>Nancy Play membership</h3>
-        <p class="terms"><b>3 days free</b>, then <b>US$99/yr</b> billed annually. Cancel anytime during the trial and pay nothing.</p>
-        <ul>
+      <p class="lem25">2-pack price reflects 25% off applied automatically with code LEM25 at checkout.</p>
+
+      <!-- Add-on: Nancy Play -->
+      <label class="addon" id="addonPlay">
+        <input type="checkbox" id="playCheck">
+        <div class="addon-row">
+          <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <span class="addon-label">Add Nancy&nbsp;Play <span class="terms">(3 days <b>free trial</b>, then US$99/yr)</span></span>
+          <span class="info" aria-hidden="true">i</span>
+        </div>
+        <ul class="addon-features">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Guided pleasure audio &amp; technique sessions</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Fresh content dropped every week</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Couples &amp; solo modes synced to your Lem</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Personalized recommendations as you go</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg> Cancel anytime — no questions asked</li>
         </ul>
-      </div>
+      </label>
 
       <button class="buy" id="buyBtn">Add to Cart — $89</button>
       <p class="buy-note" id="buyNote">One-time purchase · 30-day money-back guarantee</p>
@@ -234,67 +227,51 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(48px,
 
 <script>
 (function(){
-  var optLem = document.getElementById('optLem');
-  var optPlay = document.getElementById('optPlay');
-  var subPanel = document.getElementById('subPanel');
-  var buyBtn = document.getElementById('buyBtn');
-  var buyNote = document.getElementById('buyNote');
-  var priceNow = document.getElementById('priceNow');
-  var priceWas = document.getElementById('priceWas');
-  var priceBadge = document.getElementById('priceBadge');
-  var priceSub = document.getElementById('priceSub');
-
-  // checkout destinations (placeholders — wire to real Shopify when ready)
-  var LINKS = {
-    lem: 'https://hellonancy.com/products/lem',
-    play: '#nancy-play-checkout'
+  var BUNDLES = {
+    '1': {now:'$89.00', was:'$159.00', badge:'44% OFF', btn:'$89'},
+    '2': {now:'$133.50', was:'$318.00', badge:'58% OFF', btn:'$133.50'}
   };
+  var b1=document.getElementById('bundle1'), b2=document.getElementById('bundle2');
+  var addon=document.getElementById('addonPlay'), playCheck=document.getElementById('playCheck');
+  var buyBtn=document.getElementById('buyBtn'), buyNote=document.getElementById('buyNote');
+  var priceNow=document.getElementById('priceNow'), priceWas=document.getElementById('priceWas'), priceBadge=document.getElementById('priceBadge');
+  var current='1';
 
-  function select(plan){
-    var isPlay = plan === 'play';
-    optPlay.classList.toggle('selected', isPlay);
-    optLem.classList.toggle('selected', !isPlay);
-    optPlay.querySelector('input').checked = isPlay;
-    optLem.querySelector('input').checked = !isPlay;
-    subPanel.classList.toggle('show', isPlay);
-
-    if(isPlay){
-      priceNow.textContent = 'Free';
-      priceWas.hidden = true;
-      priceBadge.textContent = '3-DAY TRIAL';
-      priceSub.hidden = false;
-      priceSub.textContent = 'then US$99/yr';
-      buyBtn.textContent = 'Start 3-Day Free Trial';
-      buyNote.textContent = 'Free for 3 days, then US$99/yr · Cancel anytime';
-    } else {
-      priceNow.textContent = '$89.00';
-      priceWas.hidden = false;
-      priceWas.textContent = '$159.00';
-      priceBadge.textContent = '44% OFF';
-      priceSub.hidden = true;
-      buyBtn.textContent = 'Add to Cart — $89';
-      buyNote.textContent = 'One-time purchase · 30-day money-back guarantee';
-    }
+  function render(){
+    var d=BUNDLES[current];
+    b1.classList.toggle('selected', current==='1');
+    b2.classList.toggle('selected', current==='2');
+    b1.querySelector('input').checked = current==='1';
+    b2.querySelector('input').checked = current==='2';
+    priceNow.textContent=d.now; priceWas.textContent=d.was; priceBadge.textContent=d.badge;
+    buyBtn.textContent='Add to Cart — '+d.btn;
+    var play=playCheck.checked;
+    addon.classList.toggle('checked', play);
+    buyNote.textContent = play
+      ? 'Includes a 3-day Nancy Play trial, then US$99/yr · Cancel anytime'
+      : 'One-time purchase · 30-day money-back guarantee';
   }
 
-  optLem.addEventListener('click', function(){ select('lem'); });
-  optPlay.addEventListener('click', function(){ select('play'); });
+  b1.addEventListener('click', function(){ current='1'; render(); });
+  b2.addEventListener('click', function(){ current='2'; render(); });
+  // label natively toggles the checkbox; just re-render on change
+  playCheck.addEventListener('change', render);
+
   buyBtn.addEventListener('click', function(){
-    var plan = optPlay.querySelector('input').checked ? 'play' : 'lem';
-    window.location.href = LINKS[plan];
+    var url = current==='2' ? 'https://hellonancy.com/products/lem?variant=2pack' : 'https://hellonancy.com/products/lem';
+    if(playCheck.checked) url += (url.indexOf('?')>-1?'&':'?') + 'nancy-play=trial';
+    window.location.href=url;
   });
 
-  // gallery thumbs
-  var hero = document.getElementById('heroImg');
+  var hero=document.getElementById('heroImg');
   document.querySelectorAll('.thumbs button').forEach(function(b){
     b.addEventListener('click', function(){
       document.querySelectorAll('.thumbs button').forEach(function(x){x.classList.remove('active');});
-      b.classList.add('active');
-      hero.src = b.getAttribute('data-src');
+      b.classList.add('active'); hero.src=b.getAttribute('data-src');
     });
   });
 
-  select('lem');
+  render();
 })();
 </script>
 </body>
