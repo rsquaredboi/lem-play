@@ -241,7 +241,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
 
       <!-- Add-on (content swapped per variant) -->
       <label class="addon" id="addonCard">
-        <input type="checkbox" id="addCheck">
+        <input type="checkbox" id="addCheck" checked>
         <div class="addon-row">
           <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>
           <span class="addon-label"><span id="addonTitle">Add Play+</span> <span class="terms" id="addonTerms"></span></span>
@@ -316,7 +316,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
       addonTitle=el('addonTitle'), addonTerms=el('addonTerms'), addonFeatures=el('addonFeatures'),
       buyBtn=el('buyBtn'), buyNote=el('buyNote'), subtitle=el('subtitle');
 
-  var variant='play', product='lem', bundle='1';
+  var variant='play', product='lem', bundle='1', addonVisible=false;
   var money=function(n){return '$'+(n%1===0?n:n.toFixed(2));};
   var pct=function(was,now){return Math.round((was-now)/was*100);};
 
@@ -361,9 +361,8 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
     addonTitle.innerHTML=V.title;
     addonTerms.innerHTML=V.terms;
     buildFeatures(V.features);
-    var addonVisible = V.gateToLemPlay ? isPlay : true;
+    addonVisible = V.gateToLemPlay ? isPlay : true;
     addonCard.classList.toggle('hidden', !addonVisible);
-    if(!addonVisible) addCheck.checked=false;
     addonCard.classList.toggle('checked', addonVisible && addCheck.checked);
 
     // CTA
@@ -378,7 +377,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
       document.querySelectorAll('.variant-switch .seg button').forEach(function(b){b.classList.remove('active');});
       btn.classList.add('active');
       variant=btn.getAttribute('data-variant');
-      product='lem'; addCheck.checked=false; // reset on variant change
+      product='lem'; addCheck.checked=true; // auto-select subscription on both
       render();
     });
   });
@@ -393,7 +392,7 @@ h1.title{font-family:'ESRebond',sans-serif;font-weight:700;font-size:clamp(46px,
     var params=[];
     if(variant==='play' && product==='play') params.push('version=lem-play');
     if(bundle==='2') params.push('pack=2');
-    if(addCheck.checked) params.push(variant==='play'?'play-plus=trial':'snack-pack=trial');
+    if(addonVisible && addCheck.checked) params.push(variant==='play'?'play-plus=trial':'snack-pack=trial');
     var url='https://hellonancy.com/products/lem'+(params.length?('?'+params.join('&')):'');
     window.location.href=url;
   });
